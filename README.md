@@ -6,17 +6,21 @@
 ### Running Cypress
 
 #### How to install Cypress (install only if you are not able to run cypress):
+- `npm install`
+*or*
 - `npm install cypress --save-dev`
 
 #### How to run Cypress:
-- navigate to **cd /your/project/path** and then run the following command:
-`npx cypress open`
+- navigate to **cd /your/project/path** and then run the following command: `npx cypress open`
 
 #### How to run Cypress with tags:
 - `npx cypress run -e TAGS='@login' --headed`
 - `npx cypress run -e TAGS='@login or @contact-us' --headed`
 - `npx cypress run -e TAGS='@smoke' --headed`
 - `npx cypress run -e TAGS='(@login or @contact-us) and not @smoke' --headed`
+
+#### How to run Cypress with specific browser:
+- `npx cypress run --browser chrome`
 
 #### How to run Cypress with scripts (scripts are located in package.json document):
 - `npm run full-regression-headed-chrome`

@@ -1,7 +1,7 @@
 {
   "name": "cypress-automation-framework",
   "version": "1.0.0",
-  "description": "Cypress Cucumber Automation Framework from Udemy",
+  "description": "Cypress automation of OrangeHRM platform using Cucumber framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

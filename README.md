@@ -1,11 +1,11 @@
 ## Cypress Cucumber - basics
 
-#### This is prepared template ready to start writting Cypress test using Cucumber. It includes some of my notes in order to remind myself on how to set some things.
+#### This is a whole Cypress test suite for OrangeHRM made for presentation and learning purposes. It was made from scratch using my own Cypress Cucumber template I created. This readme includes some of my notes in order to remind myself on how to set some things.
 
 
 ### Running Cypress
 
-#### How to install Cypress:
+#### How to install Cypress (install only if you are not able to run cypress):
 - `npm install cypress --save-dev`
 
 #### How to run Cypress:

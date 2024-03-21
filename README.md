@@ -2,8 +2,8 @@
 
 #### This is a whole Cypress test suite for OrangeHRM made for presentation and learning purposes. It was made from scratch using my own Cypress Cucumber template I created. This readme includes some of my notes in order to remind myself on how to set some things.
 
-Author: Vilim Hlušička
-Contact: vilim.hlusicka@gmail.com
+- Author: Vilim Hlušička 
+- Contact: vilim.hlusicka@gmail.com
 
 ### Install Cypress
 

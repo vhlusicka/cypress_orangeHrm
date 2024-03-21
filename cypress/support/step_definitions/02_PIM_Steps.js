@@ -19,8 +19,8 @@ Then('I enter a random Employee Id', () => {
         .find('input')
         .clear()
         .type(employeeId);
+    // This cy.log is for debugging purposes
     cy.log(employeeId);
-    cy.pause();
 })
 
 Then('I upload a profile photo', () => {
@@ -32,5 +32,13 @@ Then('I intercept the endpoint to confirm user creation', () => {
     cy.wait('@registerUser').then((interception) => {
       expect(interception.response.statusCode).to.equal(200); // Assert status code
     });
-    cy.pause();
+})
+
+Then('I enter Employee ID into Employee Id textbox', () => {
+    cy.get('label').contains('Employee Id').parent().parent()
+        .find('input').type(employeeId);
+})
+
+Then('I confirm that the new employee is visible on the filter list', () => {
+    cy.get('.orangehrm-container').find('[role="cell"]').should('contain', employeeId);
 })

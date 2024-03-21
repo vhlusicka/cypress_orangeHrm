@@ -3,24 +3,27 @@
 #### This is a whole Cypress test suite for OrangeHRM made for presentation and learning purposes. It was made from scratch using my own Cypress Cucumber template I created. This readme includes some of my notes in order to remind myself on how to set some things.
 
 
-### Running Cypress
+### Install Cypress
 
 #### How to install Cypress (install only if you are not able to run cypress):
 - `npm install`
 *or*
 - `npm install cypress --save-dev`
 
-#### How to run Cypress:
-- navigate to **cd /your/project/path** and then run the following command: `npx cypress open`
 
-#### How to run Cypress with tags:
+### How to run Cypress:
+
+#### Run Cypress via UI app
+- `npx cypress open`
+
+#### Run Cypress with tags:
 - `npx cypress run -e TAGS='@login' --headed`
 - `npx cypress run -e TAGS='@login or @contact-us' --headed`
 - `npx cypress run -e TAGS='@smoke' --headed`
 - `npx cypress run -e TAGS='(@login or @contact-us) and not @smoke' --headed`
 
 #### How to run Cypress with specific browser:
-- `npx cypress run --browser chrome`
+- Add the option `--browser chrome` to the running command
 
 #### How to run Cypress with scripts (scripts are located in package.json document):
 - `npm run full-regression-headed-chrome`

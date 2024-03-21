@@ -16,3 +16,9 @@ Feature: OrangeHRM - Admin dashboard page
         And I upload a profile photo
         And I click on the "Save" button to confirm
         Then I intercept the endpoint to confirm user creation
+
+    Scenario: Search for a newly created user
+        Given I navigate to "PIM" dashboard
+        And I enter Employee ID into Employee Id textbox
+        And I click on the "Search" button to confirm
+        Then I confirm that the new employee is visible on the filter list

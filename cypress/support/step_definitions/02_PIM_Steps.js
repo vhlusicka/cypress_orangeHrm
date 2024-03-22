@@ -23,6 +23,31 @@ Then('I enter a random Employee Id', () => {
     cy.log(employeeId);
 })
 
+Then('I click on Create Login Details to enable it', () => {
+    cy.contains('Create Login Details').parent()
+        .find('input[type="checkbox"]')
+        .click({ force: true });
+})
+
+Then('I type {string} to the Username field', (username) => {
+    // if username already exists, the test will fail. Better solution to be done additionally.
+    cy.contains('Username').parent().parent()
+        .find('input')
+        .type(username);
+})
+
+Then('I type {string} to the Password and Confirm Password fields', (password) => {
+    cy.contains('Password').parent().parent()
+        .find('[type="password"]')
+        .type(password);
+    cy.contains('Confirm Password').parent().parent()
+        .find('[type="password"]')
+        .type(password);
+})
+
+
+
+
 Then('I upload a profile photo', () => {
     cy.get('input[type=file]').selectFile(profileImage, { force: true });
 })

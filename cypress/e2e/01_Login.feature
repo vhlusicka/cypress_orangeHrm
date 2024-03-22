@@ -4,6 +4,7 @@ Feature: OrangeHRM - Login Page
     Background: Preconditions
         Given I navigate to the OrangeHRM Login page
 
+    @smoke
     Scenario: Valid Login as Admin
         When I type "Admin" as a username
         And I type "admin123" as a password

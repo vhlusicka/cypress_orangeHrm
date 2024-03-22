@@ -9,7 +9,7 @@
 
 ### How to run Cypress tests
 
-#### Install Cypress (install only if you are not able to run cypress):
+#### Install Cypress (node_modules folder should appear after installation):
 - `npm install`
 *or*
 - `npm install cypress --save-dev`

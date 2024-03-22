@@ -1,4 +1,4 @@
-@regression @pimdashboard
+@regression @pim
 Feature: OrangeHRM - Admin dashboard page
 
     Background: Preconditions
@@ -7,13 +7,17 @@ Feature: OrangeHRM - Admin dashboard page
         And I type 'admin123' as a password
         And I click on the "Login" button to confirm
 
-    Scenario: Create a new user
+    @smoke
+    Scenario: Create a new user and add login details
         Given I navigate to "PIM" dashboard
         When I click on Add button
+        And I upload a profile photo
         And I enter "Cosmo" as a First Name
         And I enter "Kramer" as a Last Name
         And I enter a random Employee Id
-        And I upload a profile photo
+        And I click on Create Login Details to enable it
+        And I type "cosmo.kramer" to the Username field
+        And I type "cosmo123" to the Password and Confirm Password fields
         And I click on the "Save" button to confirm
         Then I intercept the endpoint to confirm user creation
 

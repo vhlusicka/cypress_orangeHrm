@@ -5,24 +5,22 @@
 - Author: Vilim Hlušička 
 - Contact: vilim.hlusicka@gmail.com
 
-### Install Cypress
+---
 
-#### How to install Cypress (install only if you are not able to run cypress):
+### How to run Cypress tests
+
+#### Install Cypress (install only if you are not able to run cypress):
 - `npm install`
 *or*
 - `npm install cypress --save-dev`
-
-
-### How to run Cypress:
 
 #### Run Cypress via UI app
 - `npx cypress open`
 
 #### Run Cypress with tags:
-- `npx cypress run -e TAGS='@login' --headed`
-- `npx cypress run -e TAGS='@login or @contact-us' --headed`
-- `npx cypress run -e TAGS='@smoke' --headed`
-- `npx cypress run -e TAGS='(@login or @contact-us) and not @smoke' --headed`
+- Run with one tag: `npx cypress run -e TAGS='@login' --headed`
+- Run with two tags: `npx cypress run -e TAGS='@login or @contact-us' --headed`
+- Run by excluding a tag: `npx cypress run -e TAGS='(@login or @contact-us) and not @smoke' --headed`
 
 #### How to run Cypress with specific browser:
 - Add the option `--browser chrome` to the running command
@@ -30,6 +28,32 @@
 #### How to run Cypress with scripts (scripts are located in package.json document):
 - `npm run full-regression-headed-chrome`
 
+---
+
+### Folder structure
+
+#### Basic folder structure
+
+Using a Cypress with a Cucumber framework makes it possible for non-QA personel to understand the logic of testing procedure and what kind of testing is being performed.
+
+Majority of testing logic is contained in two types of files:
+
+- **.feature** files which are located within **e2e** folder
+    - These files contain a **description** of test scenarios which are written in human-readable format called Gherkin, and it defines the login and order in which the tests are executed. These steps can be reused whenever and wherever needed and it is encouraged for steps to be reused if possible. <br>
+    Example of step: `Given I navigate to the OrangeHRM Login page`
+
+- **.js** files which are located within **support/step_definitions** folder
+    - These files are called **spec files** (or test files). They contain an actual test code written in Cypress and are based on Javascript. <br>
+    By executing the step `Given I navigate to the OrangeHRM Login page`, all the code defined in the .js spec file within that step will be executed. <br>
+    It can consist of only one command, and it can become rather complex - it all depends on how the author of these tests defined it. <br>
+    Example of command in spec file for mentioned step:
+    ```js
+    Given('I navigate to the OrangeHRM Login page', () => {
+        cy.visit(url);
+    })
+    ```
+
+---
 
 ### Reports
 It is important to mention that these reports are not mandatory, but rather optional. It's recommended to use at least **HTML Reports** and **JSON Reports**.  Multiple Reports are optional

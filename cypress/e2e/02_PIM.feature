@@ -3,8 +3,8 @@ Feature: OrangeHRM - Admin dashboard page
 
     Background: Preconditions
         Given I navigate to the OrangeHRM Login page
-        When I type 'Admin' as a username
-        And I type 'admin123' as a password
+        When I type "Admin" as a username
+        And I type "admin123" as a password
         And I click on the "Login" button to confirm
 
     @smoke
@@ -26,3 +26,12 @@ Feature: OrangeHRM - Admin dashboard page
         And I enter Employee ID into Employee Id textbox
         And I click on the "Search" button to confirm
         Then I confirm that the new employee is visible on the filter list
+
+    @debug
+    Scenario: Login with a newly created user
+        Given I logout from the OrangeHRM
+        When I navigate to the OrangeHRM Login page
+        And I type "cosmo.kramer" as a username
+        And I type "cosmo123" as a password
+        And I click on the "Login" button to confirm
+        Then I should land on a dashboard screen

@@ -19,8 +19,8 @@
 
 #### Run Cypress with tags:
 - Run with one tag: `npx cypress run -e TAGS='@login' --headed`
-- Run with two tags: `npx cypress run -e TAGS='@login or @contact-us' --headed`
-- Run by excluding a tag: `npx cypress run -e TAGS='(@login or @contact-us) and not @smoke' --headed`
+- Run with two tags: `npx cypress run -e TAGS='@login or @pim' --headed`
+- Run by excluding a tag: `npx cypress run -e TAGS='(@login or @pim) and not @smoke' --headed`
 
 #### How to run Cypress with specific browser:
 - Add the option `--browser chrome` to the running command

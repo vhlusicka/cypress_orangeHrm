@@ -4,7 +4,9 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 // These are the variables used in the next steps
 const profileImage = 'cypress/fixtures/images/cosmo_photo.jpg';
-const employeeId = Math.floor(Math.random() * 2000) + 1000;
+// const employeeId = Math.floor(Math.random() * 2000) + 1000;
+const employeeId = Cypress.env('employeeId');
+const employeeUsername = Cypress.env('employeeUsername');
 
 Then('I enter {string} as a First Name', (firstName) => {
     cy.get('[placeholder="First Name"]').type(firstName);
@@ -29,11 +31,11 @@ Then('I click on Create Login Details to enable it', () => {
         .click({ force: true });
 })
 
-Then('I type {string} to the Username field', (username) => {
+Then('I type a username to the Username field', () => {
     // if username already exists, the test will fail. Better solution to be done additionally.
     cy.contains('Username').parent().parent()
         .find('input')
-        .type(username);
+        .type(employeeUsername);
 })
 
 Then('I type {string} to the Password and Confirm Password fields', (password) => {

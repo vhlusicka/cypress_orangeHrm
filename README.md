@@ -55,6 +55,20 @@ Majority of testing logic is contained in two types of files:
 
 ---
 
+### Global (environmental) variables
+
+Within some of the feature files, **global variables** are used. Global variables are defined within *cypress.config.ts* file. <br>
+They are used for a few purposes:
+- Defining and setting their value is easier and can be done from one single place (that place is *cypress.config.ts* file).
+- They are available to be used within multiple feature files.
+
+Both reasons also makes it possible to successfully execute the *Cleanup.feature* file, because it uses the employee ID to search <br>
+for employee in order to delete it.
+
+Example of variable defined in *cypress.config.ts* file:
+- `employeeUsername: "cosmo.kramer"`
+
+
 ### Reports
 It is important to mention that these reports are not mandatory, but rather optional. It's recommended to use at least **HTML Reports** and **JSON Reports**.  Multiple Reports are optional
 

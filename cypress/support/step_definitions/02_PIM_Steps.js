@@ -47,9 +47,6 @@ Then('I type {string} to the Password and Confirm Password fields', (password) =
         .type(password);
 })
 
-
-
-
 Then('I upload a profile photo', () => {
     cy.get('input[type=file]').selectFile(profileImage, { force: true });
 })
@@ -64,6 +61,7 @@ Then('I intercept the endpoint to confirm user creation', () => {
 Then('I enter Employee ID into Employee Id textbox', () => {
     cy.get('label').contains('Employee Id').parent().parent()
         .find('input').type(employeeId);
+    cy.log(employeeId);
 })
 
 Then('I confirm that the new employee is visible on the filter list', () => {

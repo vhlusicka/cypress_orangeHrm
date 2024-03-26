@@ -14,9 +14,10 @@ Feature: OrangeHRM - PIM Dashboard page
         And I upload a profile photo
         And I enter "Cosmo" as a First Name
         And I enter "Kramer" as a Last Name
+        # Employee Id is defined in cypress.config.ts as "employeeId"
         And I enter a random Employee Id
         And I click on Create Login Details to enable it
-        And I type "cosmo.kramer" to the Username field
+        And I type a username to the Username field
         And I type "cosmo123" to the Password and Confirm Password fields
         And I click on the "Save" button to confirm
         Then I intercept the endpoint to confirm user creation

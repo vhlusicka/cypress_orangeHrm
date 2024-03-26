@@ -24,4 +24,8 @@ export default defineConfig({
       return config;
     },
   },
+  env: {
+    employeeUsername: "cosmo.kramer",
+    employeeId: Math.floor(Math.random() * 1000) + 1000
+  }
 });

@@ -14,7 +14,7 @@ When('I navigate to {string} dashboard', (dashboardName) => {
     cy.get('.oxd-sidepanel').contains(dashboardName).click();
 })
 
-// 
+// Used to logout of platform
 When('I logout from the OrangeHRM', () => {
     cy.get('.oxd-userdropdown-name').click();
     cy.get('[role="menuitem"]').contains('Logout').click();

@@ -1,5 +1,5 @@
 @regression @pim
-Feature: OrangeHRM - Admin dashboard page
+Feature: OrangeHRM - PIM Dashboard page
 
     Background: Preconditions
         Given I navigate to the OrangeHRM Login page
@@ -23,11 +23,10 @@ Feature: OrangeHRM - Admin dashboard page
 
     Scenario: Search for a newly created user
         Given I navigate to "PIM" dashboard
-        And I enter Employee ID into Employee Id textbox
+        When I enter Employee ID into Employee Id textbox
         And I click on the "Search" button to confirm
         Then I confirm that the new employee is visible on the filter list
 
-    @debug
     Scenario: Login with a newly created user
         Given I logout from the OrangeHRM
         When I navigate to the OrangeHRM Login page

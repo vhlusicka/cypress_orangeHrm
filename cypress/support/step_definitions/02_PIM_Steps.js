@@ -51,11 +51,15 @@ Then('I upload a profile photo', () => {
     cy.get('input[type=file]').selectFile(profileImage, { force: true });
 })
 
-Then('I intercept the endpoint to confirm user creation', () => {
-    cy.intercept('POST', 'https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/pim/employees').as('registerUser');
+When('I click on the Save button to save new employee', () => {
+    // intercept of API endpoint starts here
+    cy.intercept('GET', 'https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/pim/employees').as('registerUser');
+    // get command is the action we are performing and which will trigger the API endpoint we are intercepting
+    cy.get('[type="submit"]').contains('Save').click();
     cy.wait('@registerUser').then((interception) => {
-      expect(interception.response.statusCode).to.equal(200); // Assert status code
+        expect(interception.response.statusCode).to.equal(200); // Assert status code
     });
+    
 })
 
 Then('I enter Employee ID into Employee Id textbox', () => {

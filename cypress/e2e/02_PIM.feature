@@ -19,8 +19,7 @@ Feature: OrangeHRM - PIM Dashboard page
         And I click on Create Login Details to enable it
         And I type a username to the Username field
         And I type "cosmo123" to the Password and Confirm Password fields
-        And I click on the "Save" button to confirm
-        Then I intercept the endpoint to confirm user creation
+        And I click on the Save button to save new employee
 
     Scenario: Search for a newly created user
         Given I navigate to "PIM" dashboard

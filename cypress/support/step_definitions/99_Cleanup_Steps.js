@@ -6,6 +6,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 
 Then('I click trash icon and confirm deletion of employee', () => {
+    cy.wait(2500);
     cy.get('[type="button"]').find('.bi-trash').click();
     cy.get('.orangehrm-dialog-popup').find('button').contains('Yes, Delete').click();
 })

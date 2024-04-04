@@ -90,3 +90,18 @@ More on *Multiple Cucumber HTML Reports* is available [here](https://www.npmjs.c
 
 #### Screenshots for reports
 - `npm install --save-dev cypress-cucumber-attach-screenshots-to-failed-steps`
+
+---
+
+### CI/CD pipeline configuration
+
+#### Cypress Cloud
+
+Cypress can be run using the Cypress Cloud which also has the ability to integrate it with Github and thus enable usage of Github Actions (CI/CD).
+
+To enable Cypress Cloud, do the following steps:
+- navigate to [cloud.cypress.io](https://cloud.cypress.io) and login (login can be made via Github account)
+- create a new project and sync it to Github repository
+- acquire project ID and set it to *cypress.config.ts*. More on this [here](https://docs.cypress.io/guides/cloud/account-management/projects#The-projectId-is-a-6-character-string-in-your-Cypress-configuration)
+- use the record key (also available on Cypress Cloud) to authenticate that project is allowed to record tests via Cypress Cloud. Command should look something like this:<br>
+`npx cypress run --record --key 6d038330-4aeb-4251-970c-e70fe896b092`

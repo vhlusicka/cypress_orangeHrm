@@ -7,13 +7,14 @@ Feature: OrangeHRM - Admin dashboard page
         And I type 'admin123' as a password
         And I click on the "Login" button to confirm
 
-    Scenario: Create a new user
+    @debug
+    Scenario: Create a new Admin user
         Given I navigate to "Admin" dashboard
         When I click on Add button
         And I select "Admin" from "User Role" dropdown
         And I select "Enabled" from "Status" dropdown
-        And I type "Cosmo Kramer" to "Employee Name" textbox
-        # And I type "cosmok" to Username textbox
-        # And I type <cosmo123> to Password textbox
-        # And I type <cosmo123> to Confirm Password textbox
-        # And I click the Save button
+        And I type "Cosmo Kramer" to Employee Name textbox and select it
+        And I type "cosmo.kramer.admin" to Username textbox
+        And I type "cosmo123" to Password textbox
+        And I type "cosmo123" to Confirm Password textbox
+        And I click on the Save button to save the new Admin user

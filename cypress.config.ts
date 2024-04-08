@@ -5,7 +5,7 @@ import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild
 
 export default defineConfig({
   responseTimeout: 10000,
-  viewportWidth: 1024,
+  viewportWidth: 1280,
   // viewportHeight: 600,
   projectId: "fkhkzz",
   e2e: {

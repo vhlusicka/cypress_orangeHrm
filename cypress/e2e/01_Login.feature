@@ -16,3 +16,7 @@ Feature: OrangeHRM - Login Page
         And I type "admin123456" as a password
         And I click on the "Login" button to confirm
         Then I should be presented with "Invalid credentials" validation message
+
+    @debug
+    Scenario: Change language
+        When I change the language to "en_US"

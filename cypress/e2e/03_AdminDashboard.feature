@@ -7,7 +7,6 @@ Feature: OrangeHRM - Admin dashboard page
         And I type 'admin123' as a password
         And I click on the "Login" button to confirm
 
-    @debug
     Scenario: Create a new Admin user
         Given I navigate to "Admin" dashboard
         When I click on Add button

@@ -1,4 +1,4 @@
-@admindashboard
+@regression @admindashboard
 Feature: OrangeHRM - Admin dashboard page
 
     Background: Preconditions
